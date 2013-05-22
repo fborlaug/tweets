@@ -1,0 +1,16 @@
+@(implicit request: RequestHeader)
+
+@main("Websocket test") {
+    <h1>Websocket test</h1>
+    <h1>Tallet er: <span id="tallet"></span></h1>
+    <script type="text/javascript">
+        $(function() {
+            var ws = new WebSocket("@routes.Application.websocketServer().webSocketURL()");
+            ws.onmessage = function(msg) {
+                console.log(msg.data)
+                $('#tallet').text(msg.data)
+            }
+        })
+    </script>
+
+}
