@@ -11,7 +11,7 @@ import play.api.libs.iteratee.{Enumerator, Iteratee}
 import play.api.libs.concurrent.Promise
 
 object Application extends Controller {
-  var counter: Long = 1;
+  var counter: Long = 1
 
   def tweetList() = Action {
     val results = 3
